@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hola mundo';
-  enabled = false;
-
-  constructor() { }
-
-  setEnabled() {
-    this.enabled = true;
-  }
+  title = 'employee-app';
 }
