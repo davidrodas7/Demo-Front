@@ -1,0 +1,38 @@
+<div class="container my-1">
+
+  <h2>Employees: </h2>
+  <div class="row">
+    <div class="col">
+      <app-form (searchEmployeeEvent)="searchByEmployeeId($event)"></app-form>
+    </div>
+  </div>
+  <div *ngIf="employeeList.length>0">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Annual Salary</th>
+          <th>Age</th>
+          <th>Profile Image</th>
+        </tr>
+      </thead>
+        <tbody>
+        <tr *ngFor="let employee of employeeList">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.employeeName }}</td>
+          <td>{{ employee.employeeSalary }}</td>
+          <td>{{ employee.employeeSalaryAnnual }}</td>
+          <td>{{ employee.employeeAge }}</td>
+          <td>{{ employee.profileImage }}</td>
+        </tr>
+        </tbody>
+    </table>
+  </div>
+  <div *ngIf="error">
+    <h3>No Employee Found, try again!</h3>
+  </div>
+</div>
+
+
